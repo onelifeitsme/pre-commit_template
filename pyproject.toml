@@ -1,0 +1,29 @@
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 79
+
+[tool.black]
+line-length = 79
+
+[tool.poetry]
+name = "tt-downloader-web"
+version = "0.1.0"
+description = ""
+authors = ["Artur Karpovich <onelifeitsme@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pre-commit = "^4.2.0"
+isort = "^6.0.1"
+black = "^25.1.0"
+flake8-pyproject = "^1.2.3"
+pytest = "^8.3.5"
+pytest-cov = "^6.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

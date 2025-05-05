@@ -1,0 +1,26 @@
+repos:
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        language: system
+        types: [python, text]
+        entry: isort --settings-path=pyproject.toml --check-only --diff
+      
+      - id: flake8
+        name: flake8
+        language: system
+        types: [python]
+        entry: flake8 --config=pyproject.toml
+      
+      - id: black
+        name: black
+        language: system
+        types: [python]
+        entry: black --check --diff
+      
+      - id: run-pytest-with-coverage
+        name: Run pytest with coverage
+        entry: pytest --cov --cov-fail-under=70
+        language: system
+        pass_filenames: false
