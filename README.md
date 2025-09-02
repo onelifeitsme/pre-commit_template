@@ -29,7 +29,19 @@ Follow these steps to get your environment up and running:
      curl -sSL https://install.python-poetry.org | python3 -
      ```
 
-2. **Install project dependencies** using Poetry:
+2. **Change project_name and authors in pyproject.toml**:
+
+3. **Install project dependencies** using Poetry:
 
    ```bash
    poetry install
+
+4. **Activate Poetry virtualenv**:
+
+   ```bash
+   poetry shell
+
+5. **Initialize Pre-commit**:
+
+   ```bash
+   pre-commit install

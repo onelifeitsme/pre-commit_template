@@ -3,24 +3,24 @@ repos:
     hooks:
       - id: isort
         name: isort
+        entry: poetry run isort --settings-path=pyproject.toml --check-only --diff
         language: system
         types: [python, text]
-        entry: isort --settings-path=pyproject.toml --check-only --diff
-      
+
       - id: flake8
         name: flake8
+        entry: poetry run flake8 --config=pyproject.toml
         language: system
         types: [python]
-        entry: flake8 --config=pyproject.toml
-      
+
       - id: black
         name: black
+        entry: poetry run black --check --diff
         language: system
         types: [python]
-        entry: black --check --diff
-      
+
       - id: run-pytest-with-coverage
         name: Run pytest with coverage
-        entry: pytest --cov --cov-fail-under=70
+        entry: poetry run pytest --cov --cov-fail-under=70
         language: system
         pass_filenames: false
